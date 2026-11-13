@@ -1,8 +1,9 @@
 ---
 layout: default
-title: Étudiant 2
-parent: Journal de bord
+title: 2026-11-13
+parent: Simao Samuel
 has_children: true
+grand_parent: Journal de bord
 ---
 
 # Étudiant 2

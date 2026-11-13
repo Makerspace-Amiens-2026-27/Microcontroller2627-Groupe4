@@ -1,8 +1,9 @@
 ---
 layout: default
-title: Étudiant 1
-parent: Journal de bord
+title: 2026-11-13
+parent: Houzelot Baptiste
 has_children: true
+grand_parent: Journal de bord
 ---
 
 # Étudiant 1
