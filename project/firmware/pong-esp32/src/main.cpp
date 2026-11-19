@@ -1,20 +1,23 @@
-#include "config.h"
-
+#include <Arduino.h>
+float i = 0;
 void setup() {
-    pinMode(PIN_BUZZER, OUTPUT);
-
-    // Test 1 : buzzer passif, une gamme do-ré-mi-fa-sol
-    const int notes[] = {262, 294, 330, 349, 392};  // fréquences en Hz
-    for (int note : notes) {
-        tone(PIN_BUZZER, note, 200);
-        delay(250);  // test de démarrage : attendre la fin de la note
-    }
-    delay(1000);
-
-    // Test 2 : buzzer actif, un bip d'une demi-seconde
-    digitalWrite(PIN_BUZZER, HIGH);
-    delay(500);
-    digitalWrite(PIN_BUZZER, LOW);
+  pinMode(LED_BUILTIN, OUTPUT);
+  Serial.begin(115200);
+  delay(1500);   // USB natif : laisse le temps au PC de rouvrir le port
 }
 
-void loop() {}
+void loop() {
+  digitalWrite(LED_BUILTIN, LOW);   // LOW allume la LED de la XIAO
+  delay(500);
+  digitalWrite(LED_BUILTIN, HIGH);  // HIGH l'éteint
+  delay(500);
+  i += 0.1;
+
+  Serial.print(">sin:");
+  Serial.println(sin(i));
+
+  Serial.print(">cos:");
+  Serial.println(cos(i));
+
+  delay(10);
+}
